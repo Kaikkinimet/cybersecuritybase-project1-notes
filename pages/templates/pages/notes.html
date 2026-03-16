@@ -1,0 +1,13 @@
+<h1>Your notes</h1>
+<a href="/notes/add/">Add note</a>
+<ul>
+  {% for note in notes %}
+    <li>
+      <a href="/notes/{{ note.id }}/">{{ note.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+<form action="/logout/" method="post">
+  {% csrf_token %}
+  <button type="submit">Logout</button>
+</form>
