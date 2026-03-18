@@ -8,8 +8,8 @@ FLAW 1: Broken Access Control
 File: exact source link pinpointing flaw 1... (pages/views.py)
 Description: The application allows users to access any note by its ID without checking ownership. This means that any authenticated user can view other users’ notes simply by modifying the URL.
 Fix: Restrict access by ensuring that the requested note belongs to the currently logged-in user. This can be done by adding an ownership check in the query (owner=request.user).
-Before screenshot: link....
-After screenshot: link....
+Before screenshot: https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-1-before-1.png
+After screenshot: https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-1-after-1.png
 
 Flaw 2: CSRF
 File: exact source link pinpointing flaw 1... (pages/views.py)
