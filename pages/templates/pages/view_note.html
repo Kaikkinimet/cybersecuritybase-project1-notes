@@ -1,5 +1,9 @@
-<h1>{{ note.title }}</h1>
-<p>{{ note.content }}</p>
+<h1>Note title: {{ note.title }}</h1>
+
+<p><strong>Logged in as:</strong> {{ request.user.username }}</p>
+<p><strong>Note owner:</strong> {{ note.owner.username }}</p>
+
+<p>Note: {{ note.content }}</p>
 
 <a href="/notes/{{ note.id }}/delete/">Delete</a>
 <br>

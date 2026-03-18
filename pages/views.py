@@ -41,6 +41,9 @@ def add_note(request):
 
 @login_required
 def view_note(request, note_id):
+    #FLAW1:
+    #note = get_object_or_404(Note, id=note_id)
+    #FIX:
     note = get_object_or_404(Note, id=note_id, owner=request.user)
     return render(request, "pages/view_note.html", {"note": note})
 
