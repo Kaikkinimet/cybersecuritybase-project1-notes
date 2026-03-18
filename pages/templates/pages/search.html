@@ -1,0 +1,16 @@
+<h1>Search notes</h1>
+
+<form method="get" action="/notes/search/">
+  <input type="text" name="q" value="{{ query }}" placeholder="Search by title">
+  <button type="submit">Search</button>
+</form>
+
+<ul>
+  {% for note in results %}
+    <li><a href="/notes/{{ note.id }}/">{{ note.title }}</a></li>
+  {% empty %}
+    <li>No results</li>
+  {% endfor %}
+</ul>
+
+<a href="/notes/">Back to notes</a>

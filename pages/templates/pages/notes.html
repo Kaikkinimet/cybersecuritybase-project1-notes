@@ -1,5 +1,8 @@
 <h1>Your notes</h1>
 <a href="/notes/add/">Add note</a>
+<br>
+<a href="/notes/search/">Search notes</a>
+
 <ul>
   {% for note in notes %}
     <li>
@@ -7,6 +10,7 @@
     </li>
   {% endfor %}
 </ul>
+
 <form action="/logout/" method="post">
   {% csrf_token %}
   <button type="submit">Logout</button>

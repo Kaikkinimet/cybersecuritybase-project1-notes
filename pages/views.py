@@ -43,3 +43,22 @@ def add_note(request):
 def view_note(request, note_id):
     note = get_object_or_404(Note, id=note_id, owner=request.user)
     return render(request, "pages/view_note.html", {"note": note})
+
+@login_required
+def delete_note(request, note_id):
+    note = get_object_or_404(Note, id=note_id, owner=request.user)
+
+    if request.method == "POST":
+        note.delete()
+        return redirect("/notes/")
+
+    return render(request, "pages/delete_note.html", {"note": note})
+
+@login_required
+def search_notes(request):
+    query = request.GET.get("q", "")
+    results = Note.objects.filter(owner=request.user, title__icontains=query)
+    return render(request, "pages/search.html", {
+        "query": query,
+        "results": results,
+    })
