@@ -39,7 +39,10 @@ https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screen
 
 
 ### **FLAW 3: Injection**
-**File:** <br>
+**File:**  
+https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/c5f4d196d547b3c5b7f67fa1340202554e0adc27/pages/views.py#L75
+https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/c5f4d196d547b3c5b7f67fa1340202554e0adc27/pages/templates/pages/search.html#L5
+<br>
 **Description:** The search functionality was vulnerable to SQL injection because user input was directly concatenated into a raw SQL query. This allowed a malicious user to manipulate the query logic by entering crafted input.<br>
 **Fix:** Do not build SQL queries by concatenating user input. Use Django ORM filtering or parameterized queries so that input is treated as data instead of executable SQL. <br>
 **Before screenshot:**
