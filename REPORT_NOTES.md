@@ -18,11 +18,10 @@ https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screen
 **After screenshot:**
 https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-1-after-1.png
 
-### **Flaw 2: CSRF**
+### **FLAW 2: CSRF**
 **File:** https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/526b4c7d22e08eee8198d007e7226aa03625cc25/pages/views.py#L7
 https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/526b4c7d22e08eee8198d007e7226aa03625cc25/pages/templates/pages/delete_note.html#L8
 <br>
-
 **Description:**
 The delete functionality was vulnerable to Cross-Site Request Forgery because CSRF protection was disabled and the form did not include a CSRF token. This allowed an attacker to forge a POST request that deleted a note on behalf of a logged-in user.
 <br>
@@ -39,21 +38,27 @@ https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screen
 <br>
 
 
-### **Flaw 3: Injection**
+### **FLAW 3: Injection**
 **File:** <br>
 **Description:** The search functionality was vulnerable to SQL injection because user input was directly concatenated into a raw SQL query. This allowed a malicious user to manipulate the query logic by entering crafted input.<br>
 **Fix:** Do not build SQL queries by concatenating user input. Use Django ORM filtering or parameterized queries so that input is treated as data instead of executable SQL. <br>
-**Before screenshot:** <br>
-**After screenshot:** <br>
+**Before screenshot:**  
+https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-3-before-1.png
+<br>
+**After screenshot:**  
+https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-3-after-1.png
+<br>
 
-### **Flaw 4: Security Misconfiguration**
+### **FLAW 4: Security Misconfiguration**
 **File:** <br>
 **Description:** <br>
 **Fix:** <br>
-**Before screenshot:** <br>
-**After screenshot:** <br>
+**Before screenshot:**  
+<br>
+**After screenshot:**  
+<br>
 
-### **Flaw 5: Identification and Authentication Failures**
+### **FLAW 5: Identification and Authentication Failures**
 **File:** <br>
 **Description:** <br>
 **Fix:** <br>
