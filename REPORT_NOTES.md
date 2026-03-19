@@ -42,20 +42,24 @@ https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screen
 **File:** <br>
 **Description:** The search functionality was vulnerable to SQL injection because user input was directly concatenated into a raw SQL query. This allowed a malicious user to manipulate the query logic by entering crafted input.<br>
 **Fix:** Do not build SQL queries by concatenating user input. Use Django ORM filtering or parameterized queries so that input is treated as data instead of executable SQL. <br>
-**Before screenshot:**  
+**Before screenshot:**
 https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-3-before-1.png
 <br>
-**After screenshot:**  
+**After screenshot:**
 https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-3-after-1.png
 <br>
 
 ### **FLAW 4: Security Misconfiguration**
 **File:** <br>
-**Description:** <br>
-**Fix:** <br>
-**Before screenshot:**  
+**Description:**
+The application renders user input without proper escaping, allowing malicious scripts to be executed in the browser. By injecting JavaScript into a note, an attacker can execute code in another user’s session.
 <br>
-**After screenshot:**  
+**Fix:**
+Do not use unsafe rendering such as |safe. Let Django automatically escape user input so that it is treated as plain text instead of executable code.
+<br>
+**Before screenshot:**
+<br>
+**After screenshot:**
 <br>
 
 ### **FLAW 5: Identification and Authentication Failures**
