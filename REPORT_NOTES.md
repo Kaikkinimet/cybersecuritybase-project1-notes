@@ -17,8 +17,12 @@ https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/3194253d91a
 
 ### **Flaw 2: CSRF**
 **File:** <br>
-**Description:** <br>
-**Fix:** <br>
+**Description:**
+The delete functionality was vulnerable to Cross-Site Request Forgery because CSRF protection was disabled and the form did not include a CSRF token. This allowed an attacker to forge a POST request that deleted a note on behalf of a logged-in user.
+<br>
+**Fix:**
+Remove @csrf_exempt and include {% csrf_token %} in the delete form. This ensures that only legitimate requests created by the application are accepted.
+<br>
 **Before screenshot:** <br>
 **After screenshot:** <br>
 

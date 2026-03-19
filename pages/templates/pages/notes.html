@@ -1,4 +1,7 @@
 <h1>Your notes</h1>
+<p><strong>Logged in as:</strong> {{ request.user.username }}</p>
+<!-- <p><strong>Note owner:</strong> {{ note.owner.username }}</p> -->
+<!-- \<p><strong>Note number:</strong> {{ note.id }}</p> -->
 <a href="/notes/add/">Add note</a>
 <br>
 <a href="/notes/search/">Search notes</a>
@@ -6,6 +9,7 @@
 <ul>
   {% for note in notes %}
     <li>
+      ID: {{ note.id }} |
       <a href="/notes/{{ note.id }}/">{{ note.title }}</a>
     </li>
   {% endfor %}

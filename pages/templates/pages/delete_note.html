@@ -1,8 +1,14 @@
 <h1>Delete note</h1>
-<p>Are you sure you want to delete "{{ note.title }}"?</p>
+<p><strong>Logged in as:</strong> {{ request.user.username }}</p>
+<p><strong>Note owner:</strong> {{ note.owner.username }}</p>
+<p>Are you sure you want to delete note id: "{{ note.id }}: {{ note.title }}"?</p>
+
 
 <form method="post">
+<!-- FLAW2_FIX: Use Django's default CSRF protection and include a CSRF token in the form. -->
+<!--  {% csrf_token %} -->
   {% csrf_token %}
+
   <button type="submit">Delete</button>
 </form>
 

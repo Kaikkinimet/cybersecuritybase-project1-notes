@@ -3,6 +3,8 @@
 <p><strong>Logged in as:</strong> {{ request.user.username }}</p>
 <p><strong>Note owner:</strong> {{ note.owner.username }}</p>
 
+<p><strong>Note ID:</strong> {{ note.id }}</p>
+
 <p>Note: {{ note.content }}</p>
 
 <a href="/notes/{{ note.id }}/delete/">Delete</a>

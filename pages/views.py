@@ -4,6 +4,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from .models import Note
 
+#FLAW2:
+#FLAW2_FIX:
+#from django.views.decorators.csrf import csrf_exempt
+
 
 def home(request):
     return render(request, "pages/home.html")
@@ -43,18 +47,19 @@ def add_note(request):
 def view_note(request, note_id):
     #FLAW1:
     #note = get_object_or_404(Note, id=note_id)
-    #FIX:
+    #FLAW1_FIX:
     note = get_object_or_404(Note, id=note_id, owner=request.user)
     return render(request, "pages/view_note.html", {"note": note})
 
+#FLAW2:
+#FLAW2_FIX: Use Django's default CSRF protection and include a CSRF token in the form.
+#@csrf_exempt
 @login_required
 def delete_note(request, note_id):
     note = get_object_or_404(Note, id=note_id, owner=request.user)
-
     if request.method == "POST":
         note.delete()
         return redirect("/notes/")
-
     return render(request, "pages/delete_note.html", {"note": note})
 
 @login_required
