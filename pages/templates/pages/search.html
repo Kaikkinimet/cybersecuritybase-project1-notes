@@ -1,5 +1,10 @@
 <h1>Search notes</h1>
 
+<!-- FLAW3 -->
+
+<p><strong>Logged in as:</strong> {{ request.user.username }}</p>
+
+
 <form method="get" action="/notes/search/">
   <input type="text" name="q" value="{{ query }}" placeholder="Search by title">
   <button type="submit">Search</button>
@@ -7,7 +12,10 @@
 
 <ul>
   {% for note in results %}
-    <li><a href="/notes/{{ note.id }}/">{{ note.title }}</a></li>
+    <li>
+      ID: {{ note.id }} |
+      <a href="/notes/{{ note.id }}/">{{ note.title }}</a>
+    </li>
   {% empty %}
     <li>No results</li>
   {% endfor %}

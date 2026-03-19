@@ -8,6 +8,9 @@ from .models import Note
 #FLAW2_FIX:
 #from django.views.decorators.csrf import csrf_exempt
 
+#FLAW3:
+#FLAW3_FIX:
+from django.db import connection
 
 def home(request):
     return render(request, "pages/home.html")
@@ -62,11 +65,34 @@ def delete_note(request, note_id):
         return redirect("/notes/")
     return render(request, "pages/delete_note.html", {"note": note})
 
+
+
+
 @login_required
 def search_notes(request):
     query = request.GET.get("q", "")
+
+#FLAW3:
+ #   results = []
+ #   if query:
+ #       sql = "SELECT * FROM pages_note WHERE owner_id = " + str(request.user.id) + " AND title LIKE '%" + query + "%'"
+ #       with connection.cursor() as cursor:
+ #           cursor.execute(sql)
+ #           rows = cursor.fetchall()
+ #
+ #       for row in rows:
+ #            results.append({
+ #                "id": row[0],
+ #                "owner_id": row[1],
+ #                "title": row[2],
+ #                "content": row[3],
+ #                "created_at": row[4],
+ #            })
+
+    #FLAW3_FIX:
     results = Note.objects.filter(owner=request.user, title__icontains=query)
+
     return render(request, "pages/search.html", {
-        "query": query,
-        "results": results,
-    })
+         "query": query,
+         "results": results,
+         })
