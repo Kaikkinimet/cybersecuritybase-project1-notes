@@ -53,7 +53,10 @@ https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screen
 <br>
 
 ### **FLAW 4: Security Misconfiguration**
-**File:** <br>
+**File:**  
+https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/796d71219e47a68dd4b38c48cc39168158fcaf31/pages/templates/pages/view_note.html#L8
+
+<br>
 **Description:**
 The application renders user input without proper escaping, allowing malicious scripts to be executed in the browser. By injecting JavaScript into a note, an attacker can execute code in another user’s session.
 <br>
@@ -64,7 +67,7 @@ Do not use unsafe rendering such as |safe. Let Django automatically escape user 
 https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-4-before-1.png
 https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-4-before-2.png
 <br>
-**After screenshot:**  
+**After screenshot:**   
 https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-4-after-1.png
 <br>
 
