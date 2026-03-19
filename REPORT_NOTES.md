@@ -60,9 +60,12 @@ The application renders user input without proper escaping, allowing malicious s
 **Fix:**
 Do not use unsafe rendering such as |safe. Let Django automatically escape user input so that it is treated as plain text instead of executable code.
 <br>
-**Before screenshot:**
+**Before screenshot:**  
+https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-4-before-1.png
+https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-4-before-2.png
 <br>
-**After screenshot:**
+**After screenshot:**  
+https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-4-after-1.png
 <br>
 
 ### **FLAW 5: Identification and Authentication Failures**
