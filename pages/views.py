@@ -4,6 +4,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from .models import Note
 
+#FLAW5:
+from django.contrib.auth.models import User
+
+
+
 #FLAW2:
 #FLAW2_FIX:
 #from django.views.decorators.csrf import csrf_exempt
@@ -66,8 +71,6 @@ def delete_note(request, note_id):
     return render(request, "pages/delete_note.html", {"note": note})
 
 
-
-
 @login_required
 def search_notes(request):
     query = request.GET.get("q", "")
@@ -96,3 +99,15 @@ def search_notes(request):
          "query": query,
          "results": results,
          })
+
+#FLAW5:
+@login_required
+def debug_users(request):
+    users = User.objects.all()
+    return render(request, "pages/debug_users.html", {"users": users})
+
+#FLAW4:
+@login_required
+def debug_error(request):
+    return 1 / 0
+    # FLAW 4 FIX:

@@ -120,3 +120,9 @@ STATIC_URL = 'static/'
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/notes/"
 LOGOUT_REDIRECT_URL = "/"
+
+#FLAW4:
+#DEBUG = True
+#FLAW4_FIX:
+DEBUG = False
+ALLOWED_HOSTS = ["*"]

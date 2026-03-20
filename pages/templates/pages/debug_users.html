@@ -1,0 +1,14 @@
+<!-- FLAW5 -->
+<h1>Debug user list</h1>
+
+<p><strong>Logged in as:</strong> {{ request.user.username }}</p>
+
+<ul>
+  {% for user in users %}
+    <li>
+      Username: {{ user.username }}
+<!-- FIX:
+      | Password hash: {{ user.password }} /!/ -->
+    </li>
+  {% endfor %}
+</ul>

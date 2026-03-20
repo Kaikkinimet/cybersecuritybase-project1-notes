@@ -5,10 +5,10 @@
 
 <p><strong>Note ID:</strong> {{ note.id }}</p>
 
-<!-- FLAW4 -->
+<!-- FLAW4(OLD) -->
 <!-- <p>Note: {{ note.content|safe }}</p> -->
 
-<!-- FLAW4:FIX -->
+<!-- FLAW4(OLD):FIX -->
 <p>Note: {{ note.content }}</p>
 
 <a href="/notes/{{ note.id }}/delete/">Delete</a>

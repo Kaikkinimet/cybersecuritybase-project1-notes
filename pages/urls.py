@@ -9,4 +9,9 @@ urlpatterns = [
     path("notes/<int:note_id>/", views.view_note),
     path("notes/<int:note_id>/delete/", views.delete_note),
     path("notes/search/", views.search_notes),
+    #FLAW4:
+    path("debug-error/", views.debug_error),
+    #FLAW5:
+    path("debug/users/", views.debug_users),
+
 ]
