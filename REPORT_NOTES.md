@@ -52,32 +52,7 @@ https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screen
 https://github.com/Kaikkinimet/cybersecuritybase-project1-notes/blob/main/screenshots/flaw-3-after-1.png
 <br>
 
-
-
-### ** FLAW 4: CA05: Security Misconfiguration**
-**File:** <br>
-**Description:**
-The application is misconfigured because it runs with DEBUG=True, which exposes detailed internal error messages, stack traces, file paths, and other implementation details to users. This information can help an attacker understand the system and identify further attack paths.<br>
-**Fix:**
-Set DEBUG=False in production so that internal errors are not shown to users. This prevents sensitive implementation details from being exposed.
-Do not use unsafe rendering such as |safe. Let Django automatically escape user input so that it is treated as plain text instead of executable code.<br>
-**Before screenshot:**
-<br>
-
-**After screenshot:**<br>
-
-
-
-### **FLAW 5: Cryptographic Failures (Sensitive Data Exposure)**
-**File:** <br>
-**Description:** The application exposes sensitive authentication data by displaying users’ password hashes on a page. Even though the passwords are hashed, this information is still sensitive and should never be disclosed to users.
-<br>
-**Fix:** Do not expose password hashes or other authentication-related data in responses or templates. Only show non-sensitive user information that is actually needed.
-<br>
-**Before screenshot:** <br>
-**After screenshot:** <br>
-
-### ** DELETE: FLAW 4(old): Cross-Site Scripting (XSS)n**
+### **FLAW 4: Security Misconfiguration**
 **File:** <br>
 **Description:**
 The application renders user input without proper escaping, allowing malicious scripts to be executed in the browser. By injecting JavaScript into a note, an attacker can execute code in another user’s session.
@@ -85,9 +60,7 @@ The application renders user input without proper escaping, allowing malicious s
 **Fix:**
 Do not use unsafe rendering such as |safe. Let Django automatically escape user input so that it is treated as plain text instead of executable code.
 <br>
-
 **Before screenshot:**
 <br>
-
 **After screenshot:**
 <br>
